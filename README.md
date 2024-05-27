@@ -1,6 +1,8 @@
 # Moises184149.github.i
 Geometry Dash por camara
 
+En base a videos tutoriales del canal https://www.youtube.com/playlist?list=PLydhOMppcoU4UYgEvH7WTeC_znQi_y-MX se realizo el coidgo adecuandolo para geometry dash al estse tener la funcion de al posicionar el objeto en un aposicion determinada se presionaba la tecla una sola vez, asi que se agrego dos vaaribles boleanas siendo upPressed y downPressed y estas al activarse dejaran la tecla presionada
+
     #include <opencv2/core.hpp>
     #include <opencv2/opencv.hpp>
     #include <iostream>
@@ -33,7 +35,7 @@ Geometry Dash por camara
         vector<Point> largestContours;
         int lowerHue = 100, lowerSaturation = 110, lowerValue = 160;
         int upperHue = 255, upperSaturation = 255, upperValue = 255;
-        bool upPressed = false, downPressed = false;
+        bool upPressed = false, downPressed = false;//Mantener peresioanda las teclas
     
         if (!cap.isOpened()) {
             cout << "Error al leer la cámara " << endl;

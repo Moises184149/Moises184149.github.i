@@ -5,9 +5,9 @@ En base a videos tutoriales del canal https://www.youtube.com/playlist?list=PLyd
 
     #include <opencv2/core.hpp>
     #include <opencv2/opencv.hpp>
-    #include <iostream>
-    #include <vector>
-    #include <Windows.h>
+    #include <iostream>//funciones, condiciones
+    #include <vector>//posicion contorno y cordenaas del objeto
+    #include <Windows.h>//control d ela camra y consola
     
     using namespace cv;
     using namespace std;
@@ -30,14 +30,15 @@ En base a videos tutoriales del canal https://www.youtube.com/playlist?list=PLyd
     
     int main() {
         Mat frame, image_hsv, mask;
-        VideoCapture cap(0);
+        VideoCapture cap(0);//camara web, en caso de ser una de video externa colocar el valor en 1
         double maxArea;
         vector<Point> largestContours;
-        int lowerHue = 100, lowerSaturation = 110, lowerValue = 160;
+        int lowerHue = 100, lowerSaturation = 110, lowerValue = 160;//establecer tonos que detecta la camra en este caso un azul marino
         int upperHue = 255, upperSaturation = 255, upperValue = 255;
-        bool upPressed = false, downPressed = false;//Mantener peresioanda las teclas
+        
+        bool upPressed = false, downPressed = false;//Mantener presionada las teclas
     
-        if (!cap.isOpened()) {
+        if (!cap.isOpened()) {//si no reconoce ninguna camara
             cout << "Error al leer la cámara " << endl;
             return 1;
         }
@@ -71,12 +72,12 @@ En base a videos tutoriales del canal https://www.youtube.com/playlist?list=PLyd
     
             if (!largestContours.empty()) {
                 Moments m = moments(largestContours);
-                int cx = int(m.m10 / m.m00);
-                int cy = int(m.m01 / m.m00);
+                int cx = int(m.m10 / m.m00);//coordenadas prederterminadas de x
+                int cy = int(m.m01 / m.m00);//coordenadas prederterminadas de y
     
                 vector<vector<Point>> contoursToDraw = { largestContours };
-                drawContours(frame, contoursToDraw, -1, Scalar(255, 255, 255), 3);
-                circle(frame, Point(cx, cy), 5, Scalar(255, 255, 255), -1);
+                drawContours(frame, contoursToDraw, -1, Scalar(255, 255, 255), 3);//contorno del objeto
+                circle(frame, Point(cx, cy), 5, Scalar(255, 255, 255), -1);//centro del objeto
     
                 if (cy < frame.rows / 3) {
                     if (!upPressed) {

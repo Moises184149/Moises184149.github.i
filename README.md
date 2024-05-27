@@ -1,5 +1,5 @@
 # Moises184149.github.i
-Geometry Dash por cmaara
+Geometry Dash por camara
 
     #include <opencv2/core.hpp>
     #include <opencv2/opencv.hpp>

@@ -1,7 +1,7 @@
 # Moises184149.github.i
 Geometry Dash por camara
 
-En base a videos tutoriales del canal https://www.youtube.com/playlist?list=PLydhOMppcoU4UYgEvH7WTeC_znQi_y-MX se realizo el coidgo adecuandolo para geometry dash al estse tener la funcion de al posicionar el objeto en un aposicion determinada se presionaba la tecla una sola vez, asi que se agrego dos vaaribles boleanas siendo upPressed y downPressed y estas al activarse dejaran la tecla presionada
+En base a videos tutoriales del canal https://www.youtube.com/playlist?list=PLydhOMppcoU4UYgEvH7WTeC_znQi_y-MX se realizo el codigo adecuandolo para geometry dash al este tener la funcion de al posicionar el objeto se presionaba la tecla una sola vez, asi que se agrego dos variables boleanas siendo upPressed y downPressed. Estas al activarse dejaran la tecla presionada ahora cuando se mueve le objeto las teclas estaran presionadas hasta que vuelva a su posicion incial el objeto.
 
     #include <opencv2/core.hpp>
     #include <opencv2/opencv.hpp>
